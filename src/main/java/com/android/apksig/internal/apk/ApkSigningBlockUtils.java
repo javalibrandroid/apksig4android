@@ -52,6 +52,7 @@ import com.android.apksig.util.DataSinks;
 import com.android.apksig.util.DataSource;
 import com.android.apksig.util.DataSources;
 import com.android.apksig.util.RunnablesExecutor;
+import com.javalibrandroid.sdk21compat.function.Supplier;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -82,7 +83,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.function.Supplier;
 
 import javax.security.auth.x500.X500Principal;
 
