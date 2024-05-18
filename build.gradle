@@ -1,41 +1,50 @@
-// Generic Gradle project
-
-apply plugin: 'java'
-apply plugin: 'com.google.protobuf'
-
-sourceCompatibility = '1.8'
+apply plugin: 'com.android.library'
 
 repositories {
-    jcenter()
+    google()
+    mavenCentral()
 }
 
 buildscript {
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.11'
+        classpath 'com.android.tools.build:gradle:8.3.2'
     }
+}
+
+android {
+    namespace = "com.javalibrandroid.apksig4android"
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 34
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    /*gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }*/
 }
 
 dependencies {
-    implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
-    testImplementation 'junit:junit:4.13'
-    testImplementation 'org.bouncycastle:bcprov-jdk15on:1.68'
-    testImplementation 'org.conscrypt:conscrypt-openjdk-uber:2.5.1'
-}
+    implementation 'androidx.annotation:annotation:1.8.0'
 
-protobuf {
-    protoc {
-        artifact = 'com.google.protobuf:protoc:3.8.0'
-    }
-    generateProtoTasks {
-        all().each { task ->
-            task.builtins {
-                java {
-                    option "lite"
-                }
-            }
-        }
-    }
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.bouncycastle:bcprov-jdk15on:1.70'
+    testImplementation 'org.conscrypt:conscrypt-openjdk-uber:2.5.2'
 }
