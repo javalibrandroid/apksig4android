@@ -52,6 +52,8 @@ import com.android.apksig.internal.zip.ZipUtils;
 import com.android.apksig.util.DataSinks;
 import com.android.apksig.util.DataSource;
 import com.android.apksig.zip.ZipFormatException;
+import com.javalibrandroid.sdk21compat.base64.Base64;
+import com.javalibrandroid.sdk21compat.base64.decoder.Decoder;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -69,8 +71,6 @@ import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Base64;
-import java.util.Base64.Decoder;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;

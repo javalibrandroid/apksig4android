@@ -28,6 +28,7 @@ import com.android.apksig.internal.jar.ManifestWriter;
 import com.android.apksig.internal.jar.SignatureFileWriter;
 import com.android.apksig.internal.pkcs7.AlgorithmIdentifier;
 import com.android.apksig.internal.util.Pair;
+import com.javalibrandroid.sdk21compat.base64.Base64;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -43,7 +44,6 @@ import java.security.cert.CertificateEncodingException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;

@@ -21,6 +21,7 @@ import com.android.apksig.internal.asn1.Asn1DecodingException;
 import com.android.apksig.internal.asn1.Asn1DerEncoder;
 import com.android.apksig.internal.asn1.Asn1EncodingException;
 import com.android.apksig.internal.x509.Certificate;
+import com.javalibrandroid.sdk21compat.base64.Base64;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -30,7 +31,6 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.Collection;
 
 /**
